@@ -1,0 +1,14 @@
+C:\Users\kjseo\Desktop\CsServerStudy\myListener\bin\Debug\net8.0\myListener.exe
+C:\Users\kjseo\Desktop\CsServerStudy\myListener\bin\Debug\net8.0\myListener.deps.json
+C:\Users\kjseo\Desktop\CsServerStudy\myListener\bin\Debug\net8.0\myListener.runtimeconfig.json
+C:\Users\kjseo\Desktop\CsServerStudy\myListener\bin\Debug\net8.0\myListener.dll
+C:\Users\kjseo\Desktop\CsServerStudy\myListener\bin\Debug\net8.0\myListener.pdb
+C:\Users\kjseo\Desktop\CsServerStudy\myListener\obj\Debug\net8.0\myListener.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kjseo\Desktop\CsServerStudy\myListener\obj\Debug\net8.0\myListener.AssemblyInfoInputs.cache
+C:\Users\kjseo\Desktop\CsServerStudy\myListener\obj\Debug\net8.0\myListener.AssemblyInfo.cs
+C:\Users\kjseo\Desktop\CsServerStudy\myListener\obj\Debug\net8.0\myListener.csproj.CoreCompileInputs.cache
+C:\Users\kjseo\Desktop\CsServerStudy\myListener\obj\Debug\net8.0\myListener.dll
+C:\Users\kjseo\Desktop\CsServerStudy\myListener\obj\Debug\net8.0\refint\myListener.dll
+C:\Users\kjseo\Desktop\CsServerStudy\myListener\obj\Debug\net8.0\myListener.pdb
+C:\Users\kjseo\Desktop\CsServerStudy\myListener\obj\Debug\net8.0\myListener.genruntimeconfig.cache
+C:\Users\kjseo\Desktop\CsServerStudy\myListener\obj\Debug\net8.0\ref\myListener.dll

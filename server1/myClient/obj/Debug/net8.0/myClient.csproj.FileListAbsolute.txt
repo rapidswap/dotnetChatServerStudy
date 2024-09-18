@@ -1,0 +1,14 @@
+C:\Users\kjseo\Desktop\CsServerStudy\myClient\bin\Debug\net8.0\myClient.exe
+C:\Users\kjseo\Desktop\CsServerStudy\myClient\bin\Debug\net8.0\myClient.deps.json
+C:\Users\kjseo\Desktop\CsServerStudy\myClient\bin\Debug\net8.0\myClient.runtimeconfig.json
+C:\Users\kjseo\Desktop\CsServerStudy\myClient\bin\Debug\net8.0\myClient.dll
+C:\Users\kjseo\Desktop\CsServerStudy\myClient\bin\Debug\net8.0\myClient.pdb
+C:\Users\kjseo\Desktop\CsServerStudy\myClient\obj\Debug\net8.0\myClient.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kjseo\Desktop\CsServerStudy\myClient\obj\Debug\net8.0\myClient.AssemblyInfoInputs.cache
+C:\Users\kjseo\Desktop\CsServerStudy\myClient\obj\Debug\net8.0\myClient.AssemblyInfo.cs
+C:\Users\kjseo\Desktop\CsServerStudy\myClient\obj\Debug\net8.0\myClient.csproj.CoreCompileInputs.cache
+C:\Users\kjseo\Desktop\CsServerStudy\myClient\obj\Debug\net8.0\myClient.dll
+C:\Users\kjseo\Desktop\CsServerStudy\myClient\obj\Debug\net8.0\refint\myClient.dll
+C:\Users\kjseo\Desktop\CsServerStudy\myClient\obj\Debug\net8.0\myClient.pdb
+C:\Users\kjseo\Desktop\CsServerStudy\myClient\obj\Debug\net8.0\myClient.genruntimeconfig.cache
+C:\Users\kjseo\Desktop\CsServerStudy\myClient\obj\Debug\net8.0\ref\myClient.dll

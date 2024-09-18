@@ -1,0 +1,14 @@
+C:\Users\kjseo\Desktop\CsServerStudy\Client\client4\obj\Debug\net8.0\client4.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kjseo\Desktop\CsServerStudy\Client\client4\obj\Debug\net8.0\client4.AssemblyInfoInputs.cache
+C:\Users\kjseo\Desktop\CsServerStudy\Client\client4\obj\Debug\net8.0\client4.AssemblyInfo.cs
+C:\Users\kjseo\Desktop\CsServerStudy\Client\client4\obj\Debug\net8.0\client4.csproj.CoreCompileInputs.cache
+C:\Users\kjseo\Desktop\CsServerStudy\Client\client4\bin\Debug\net8.0\client4.exe
+C:\Users\kjseo\Desktop\CsServerStudy\Client\client4\bin\Debug\net8.0\client4.deps.json
+C:\Users\kjseo\Desktop\CsServerStudy\Client\client4\bin\Debug\net8.0\client4.runtimeconfig.json
+C:\Users\kjseo\Desktop\CsServerStudy\Client\client4\bin\Debug\net8.0\client4.dll
+C:\Users\kjseo\Desktop\CsServerStudy\Client\client4\bin\Debug\net8.0\client4.pdb
+C:\Users\kjseo\Desktop\CsServerStudy\Client\client4\obj\Debug\net8.0\client4.dll
+C:\Users\kjseo\Desktop\CsServerStudy\Client\client4\obj\Debug\net8.0\refint\client4.dll
+C:\Users\kjseo\Desktop\CsServerStudy\Client\client4\obj\Debug\net8.0\client4.pdb
+C:\Users\kjseo\Desktop\CsServerStudy\Client\client4\obj\Debug\net8.0\client4.genruntimeconfig.cache
+C:\Users\kjseo\Desktop\CsServerStudy\Client\client4\obj\Debug\net8.0\ref\client4.dll

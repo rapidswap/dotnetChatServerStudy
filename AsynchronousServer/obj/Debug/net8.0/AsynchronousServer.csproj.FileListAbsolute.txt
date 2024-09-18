@@ -1,0 +1,14 @@
+C:\Users\kjseo\Desktop\CsServerStudy\AsynchronousServer\obj\Debug\net8.0\AsynchronousServer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kjseo\Desktop\CsServerStudy\AsynchronousServer\obj\Debug\net8.0\AsynchronousServer.AssemblyInfoInputs.cache
+C:\Users\kjseo\Desktop\CsServerStudy\AsynchronousServer\obj\Debug\net8.0\AsynchronousServer.AssemblyInfo.cs
+C:\Users\kjseo\Desktop\CsServerStudy\AsynchronousServer\obj\Debug\net8.0\AsynchronousServer.csproj.CoreCompileInputs.cache
+C:\Users\kjseo\Desktop\CsServerStudy\AsynchronousServer\bin\Debug\net8.0\AsynchronousServer.exe
+C:\Users\kjseo\Desktop\CsServerStudy\AsynchronousServer\bin\Debug\net8.0\AsynchronousServer.deps.json
+C:\Users\kjseo\Desktop\CsServerStudy\AsynchronousServer\bin\Debug\net8.0\AsynchronousServer.runtimeconfig.json
+C:\Users\kjseo\Desktop\CsServerStudy\AsynchronousServer\bin\Debug\net8.0\AsynchronousServer.dll
+C:\Users\kjseo\Desktop\CsServerStudy\AsynchronousServer\bin\Debug\net8.0\AsynchronousServer.pdb
+C:\Users\kjseo\Desktop\CsServerStudy\AsynchronousServer\obj\Debug\net8.0\AsynchronousServer.dll
+C:\Users\kjseo\Desktop\CsServerStudy\AsynchronousServer\obj\Debug\net8.0\refint\AsynchronousServer.dll
+C:\Users\kjseo\Desktop\CsServerStudy\AsynchronousServer\obj\Debug\net8.0\AsynchronousServer.pdb
+C:\Users\kjseo\Desktop\CsServerStudy\AsynchronousServer\obj\Debug\net8.0\AsynchronousServer.genruntimeconfig.cache
+C:\Users\kjseo\Desktop\CsServerStudy\AsynchronousServer\obj\Debug\net8.0\ref\AsynchronousServer.dll
