@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\kjseo\\Desktop\\CsServerStudy\\server1\\myListener\\myListener.csproj": {}
+    "C:\\github\\dotnetChatServerStudy\\server1\\myListener\\myListener.csproj": {}
   },
   "projects": {
-    "C:\\Users\\kjseo\\Desktop\\CsServerStudy\\server1\\myListener\\myListener.csproj": {
+    "C:\\github\\dotnetChatServerStudy\\server1\\myListener\\myListener.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\kjseo\\Desktop\\CsServerStudy\\server1\\myListener\\myListener.csproj",
+        "projectUniqueName": "C:\\github\\dotnetChatServerStudy\\server1\\myListener\\myListener.csproj",
         "projectName": "myListener",
-        "projectPath": "C:\\Users\\kjseo\\Desktop\\CsServerStudy\\server1\\myListener\\myListener.csproj",
-        "packagesPath": "C:\\Users\\kjseo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kjseo\\Desktop\\CsServerStudy\\server1\\myListener\\obj\\",
+        "projectPath": "C:\\github\\dotnetChatServerStudy\\server1\\myListener\\myListener.csproj",
+        "packagesPath": "C:\\Users\\강형진\\.nuget\\packages\\",
+        "outputPath": "C:\\github\\dotnetChatServerStudy\\server1\\myListener\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\kjseo\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\강형진\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -60,7 +58,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.401/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

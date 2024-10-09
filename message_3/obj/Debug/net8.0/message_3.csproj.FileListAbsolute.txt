@@ -1,0 +1,15 @@
+C:\github\dotnetChatServerStudy\message_3\obj\Debug\net8.0\message_3.GeneratedMSBuildEditorConfig.editorconfig
+C:\github\dotnetChatServerStudy\message_3\obj\Debug\net8.0\message_3.AssemblyInfoInputs.cache
+C:\github\dotnetChatServerStudy\message_3\obj\Debug\net8.0\message_3.AssemblyInfo.cs
+C:\github\dotnetChatServerStudy\message_3\obj\Debug\net8.0\message_3.csproj.CoreCompileInputs.cache
+C:\github\dotnetChatServerStudy\message_3\obj\Debug\net8.0\message_3.sourcelink.json
+C:\github\dotnetChatServerStudy\message_3\bin\Debug\net8.0\message_3.exe
+C:\github\dotnetChatServerStudy\message_3\bin\Debug\net8.0\message_3.deps.json
+C:\github\dotnetChatServerStudy\message_3\bin\Debug\net8.0\message_3.runtimeconfig.json
+C:\github\dotnetChatServerStudy\message_3\bin\Debug\net8.0\message_3.dll
+C:\github\dotnetChatServerStudy\message_3\bin\Debug\net8.0\message_3.pdb
+C:\github\dotnetChatServerStudy\message_3\obj\Debug\net8.0\message_3.dll
+C:\github\dotnetChatServerStudy\message_3\obj\Debug\net8.0\refint\message_3.dll
+C:\github\dotnetChatServerStudy\message_3\obj\Debug\net8.0\message_3.pdb
+C:\github\dotnetChatServerStudy\message_3\obj\Debug\net8.0\message_3.genruntimeconfig.cache
+C:\github\dotnetChatServerStudy\message_3\obj\Debug\net8.0\ref\message_3.dll

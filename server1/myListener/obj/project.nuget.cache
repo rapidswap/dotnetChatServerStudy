@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "49VpSSsfWJU=",
+  "dgSpecHash": "c4CqQYAYpuA=",
   "success": true,
-  "projectFilePath": "C:\\Users\\kjseo\\Desktop\\CsServerStudy\\server1\\myListener\\myListener.csproj",
+  "projectFilePath": "C:\\github\\dotnetChatServerStudy\\server1\\myListener\\myListener.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
