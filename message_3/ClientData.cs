@@ -5,32 +5,28 @@ using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
+using System.Collections.Concurrent;
 
 namespace message_3
 {
-    class ClientData
+    public class ClientData
     {
-        public TcpClient tcpclient {get; set;}
-        public byte[] readBuffer {get; set;}
-        public StringBuilder currentMsg {get;set;}
-        public string clientName {get; set;}
-        public int clientNumber {get; set;}
+        public TcpClient tcpClient { get; private set; }
+        public string clientName { get; set; }
+        public int clientNumber { get; set; }
+        public byte[] readBuffer { get; set; }
 
-        public ClientData(TcpClient tcpclient)
+        public ClientData(TcpClient tcpClient, int clientNumber)
         {
-            currentMsg = new StringBuilder();
-            readBuffer = new byte[1024];
-            this.tcpclient = tcpclient;
-            char[] splitDivision = new char[2];
-            splitDivision[0]='.';
-            splitDivision[1]=':';
+            this.tcpClient = tcpClient;
+            this.clientNumber = clientNumber;
+            this.clientName = "Unknown";
+            this.readBuffer = new byte[1024];
 
-            string[] temp = null;
-
-            temp = tcpclient.Client.LocalEndPoint.ToString().Split(splitDivision);
-            this.clientName=int.Parse(temp[3]);
-
-           
+            NetworkStream stream = tcpClient.GetStream();
+            byte[] buffer = new byte[1024];
+            int bytesRead = stream.Read(buffer, 0, buffer.Length);
+            this.clientName = Encoding.UTF8.GetString(buffer, 0, bytesRead).Trim();
         }
     }
 }

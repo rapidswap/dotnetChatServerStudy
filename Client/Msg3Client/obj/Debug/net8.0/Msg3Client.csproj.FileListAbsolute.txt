@@ -1,0 +1,15 @@
+C:\github\dotnetChatServerStudy\Client\Msg3Client\obj\Debug\net8.0\Msg3Client.GeneratedMSBuildEditorConfig.editorconfig
+C:\github\dotnetChatServerStudy\Client\Msg3Client\obj\Debug\net8.0\Msg3Client.AssemblyInfoInputs.cache
+C:\github\dotnetChatServerStudy\Client\Msg3Client\obj\Debug\net8.0\Msg3Client.AssemblyInfo.cs
+C:\github\dotnetChatServerStudy\Client\Msg3Client\obj\Debug\net8.0\Msg3Client.csproj.CoreCompileInputs.cache
+C:\github\dotnetChatServerStudy\Client\Msg3Client\obj\Debug\net8.0\Msg3Client.sourcelink.json
+C:\github\dotnetChatServerStudy\Client\Msg3Client\bin\Debug\net8.0\Msg3Client.exe
+C:\github\dotnetChatServerStudy\Client\Msg3Client\bin\Debug\net8.0\Msg3Client.deps.json
+C:\github\dotnetChatServerStudy\Client\Msg3Client\bin\Debug\net8.0\Msg3Client.runtimeconfig.json
+C:\github\dotnetChatServerStudy\Client\Msg3Client\bin\Debug\net8.0\Msg3Client.dll
+C:\github\dotnetChatServerStudy\Client\Msg3Client\bin\Debug\net8.0\Msg3Client.pdb
+C:\github\dotnetChatServerStudy\Client\Msg3Client\obj\Debug\net8.0\Msg3Client.dll
+C:\github\dotnetChatServerStudy\Client\Msg3Client\obj\Debug\net8.0\refint\Msg3Client.dll
+C:\github\dotnetChatServerStudy\Client\Msg3Client\obj\Debug\net8.0\Msg3Client.pdb
+C:\github\dotnetChatServerStudy\Client\Msg3Client\obj\Debug\net8.0\Msg3Client.genruntimeconfig.cache
+C:\github\dotnetChatServerStudy\Client\Msg3Client\obj\Debug\net8.0\ref\Msg3Client.dll

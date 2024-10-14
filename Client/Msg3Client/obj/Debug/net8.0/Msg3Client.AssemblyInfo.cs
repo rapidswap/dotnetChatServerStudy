@@ -10,12 +10,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("message_3")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("Msg3Client")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6d8b217a6c9582443fec4b9bd2fb56b897e50f25")]
-[assembly: System.Reflection.AssemblyProductAttribute("message_3")]
-[assembly: System.Reflection.AssemblyTitleAttribute("message_3")]
+[assembly: System.Reflection.AssemblyProductAttribute("Msg3Client")]
+[assembly: System.Reflection.AssemblyTitleAttribute("Msg3Client")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 // MSBuild WriteCodeFragment 클래스에서 생성되었습니다.

@@ -5,22 +5,23 @@ using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Collections.Concurrent;
 namespace message_3
 {
     public class MainServer
     {
-        ClinetManager _clientManager = null;
+        private ClientManager _clientManager;
         ConcurrentBag<string> chattingLog=null;
         ConcurrentBag<string> AccessLog=null;
         Thread conntectCheckThread=null;
+        private bool isRunning = true;
 
         public MainServer()
         {
-            _clientManager = new ClinetManager();
+            _clientManager = new ClientManager();
             chattingLog = new ConcurrentBag<string>();
             AccessLog = new ConcurrentBag<string>();
-            _clientManager.EventHandler += ClinetEvent;
+            _clientManager.EventHandler += ClientEvent;
             _clientManager.messageParsingAction += MessageParsing;
             Task serverStart = Task.Run(() =>
             {
@@ -33,32 +34,34 @@ namespace message_3
 
         private void ConnectCheckLoop()
         {
-            while(true)
+            while(isRunning)
             {
-                foreach(var item in _clientManager.clientDic)
+                foreach(var item in _clientManager.clientDic.ToList())
                 {
-                    try{
-                        string sendStringData="관리자<TEST>";
-                        byte[] sendByteData = new byte[sendStringData.Length];
-                        sendByteData=Encoding.Default.GetBytes(sendStringData);
-
-                        item.Value.TcpClient.GetStream().Write(sendByteData,0,sendByteData.Length);
+                    try
+                    {
+                        string sendStringData = "관리자<TEST>";
+                        byte[] sendByteData = Encoding.Default.GetBytes(sendStringData);
+                        item.Value.tcpClient.GetStream().Write(sendByteData, 0, sendByteData.Length);
                     }
                     catch(Exception e)
                     {
                         RemoveClient(item.Value);
+                        Console.WriteLine($"클라이언트 연결 오류: {e.Message}");
                     }
                 }
-                conntectCheckThread.Sleep(1000);
+                Thread.Sleep(1000);
             }
         }
 
         private void RemoveClient(ClientData targetClient)
         {
-            ClientData result = null;
-            _clientManager.clientDic.TryRemove(targetClient.clientNumber,out result);
-            string leaveLog=string.Format("[{0}] {1} Leave Server", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"),result.clientName);
-            AccessLog.Add(leaveLog);
+            ClientData result;
+            if (_clientManager.clientDic.TryRemove(targetClient.clientNumber, out result))
+            {
+                string leaveLog = string.Format("[{0}] {1} Leave Server", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"), result.clientName);
+                AccessLog.Add(leaveLog);
+            }
         }
 
         private void MessageParsing(string sender, string message)
@@ -79,49 +82,68 @@ namespace message_3
 
         private void SendMsgToClient(List<string> msgList, string sender)
         {
-            string LogMessage="";
-            string parsedMessage="";
-            string receiver="";
-
-            int senderNumber = -1;
-            int receiverNumber = -1;
-
             foreach(var item in msgList)
             {
                 string[] splitedMsg = item.Split('<');
-                receiver = splitedMsg[0];
-                parsedMessage = string.Format("{0}<{1}>",sender,splitedMsg[1]);
-                senderNumber = GetClientNumber(sender);
-                receiverNumber = GetClientNumber(receiver);
-                if (senderNumber == -1 || receiverNumber == -1)
+                if (splitedMsg.Length < 2) continue;
+
+                string receiver = splitedMsg[0];
+                string message = splitedMsg[1];
+                string parsedMessage = string.Format("{0}<{1}>", sender, message);
+                int receiverNumber = GetClientNumber(receiver);
+                if (receiverNumber == -1)
                 {
-                    return;
+                    continue;
                 }
                 
-                if (parsedMessage.Contains("<GiveMeUserList>"))
+                if (message.Contains("GiveMeUserList"))
                 {
-                    string userListStringData = "관리자<";
-                    foreach (var el in ClientManager.clientDic)
-                    {
-                        userListStringData += string.Format("${0}",el.Value.clientName);
-                    }
-                    userListStringData+=">";
-                    byte[] userListByteData = new byte[userListStringData.Length];
-                    userListByteData = Encoding.Default.GetBytes(userListStringData);
-                    ClientManager.clientDic[receiverNumber].tcpClient.GetStream().Write(userListByteData,0,userListByteData.Length);
-                    return;
+                    SendUserList(receiverNumber);
                 }
-                LogMessage = string.Format(@"[{0}] [{1}] -> [{2}]  ,  {3}",DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"), sender, receiver, splitedMsg[1]);
-                ClientEvent(LogMessage, StaticDefine.ADD_CHATTING_LOG);
-                byte[] sendByteData = Encoding.Default.GetBytes(parsedMessage);
-                ClientManager.clientDic[receiverNumber].tcpClient.GetStream().Write(sendByteData,0,sendByteData.Length);
-                
+                else
+                {
+                    string LogMessage = string.Format(@"[{0}] [{1}] -> [{2}]  ,  {3}", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"), sender, receiver, message);
+                    ClientEvent(LogMessage, StaticDefine.ADD_CHATTING_LOG);
+                    SendMessage(receiverNumber, parsedMessage);
+                }
             }
         }
 
-        private interface GetClientNumber(string targetClientName)
+        private void SendUserList(int receiverNumber)
         {
-            foreach(var item in ClientManager.clientDic)
+            string userListStringData = "관리자<";
+            foreach (var el in _clientManager.clientDic)
+            {
+                // %^& 접두사를 제거하고 사용자 이름 추가
+                string userName = el.Value.clientName.StartsWith("%^&") ? el.Value.clientName.Substring(3) : el.Value.clientName;
+                userListStringData += string.Format("${0}", userName);
+            }
+            userListStringData += ">";
+            SendMessage(receiverNumber, userListStringData);
+        }
+
+        private void SendMessage(int receiverNumber, string message)
+        {
+            try
+            {
+                if (_clientManager.clientDic.TryGetValue(receiverNumber, out ClientData clientData))
+                {
+                    byte[] sendByteData = Encoding.Default.GetBytes(message);
+                    NetworkStream stream = clientData.tcpClient.GetStream();
+                    stream.Write(sendByteData, 0, sendByteData.Length);
+                    stream.Flush();
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($"메시지 전송 오류: {e.Message}");
+                RemoveClient(_clientManager.clientDic[receiverNumber]);
+            }
+        }
+
+        private int GetClientNumber(string targetClientName)
+        {
+            foreach(var item in _clientManager.clientDic)
             {
                 if(item.Value.clientName == targetClientName)
                 {
@@ -135,16 +157,16 @@ namespace message_3
         {
             switch(key)
             {
-                case StaticDefine.ADD_ACCESS_LOG;
-                {
-                    AccessLog.Add(message);
-                    break;
-                }
-                case StaticDefine.ADD_CHATTING_LOG
-                {
-                    chattingLog.Add(message);
-                    break;
-                }
+                case StaticDefine.ADD_ACCESS_LOG:
+                    {
+                        AccessLog.Add(message);
+                        break;
+                    }
+                case StaticDefine.ADD_CHATTING_LOG:
+                    {
+                        chattingLog.Add(message);
+                        break;
+                    }
             }
         }
 
@@ -163,7 +185,7 @@ namespace message_3
             }
         }
 
-        public void ConSoleVIew()
+        public void ConsoleView() // ConSoleView에서 ConsoleView로 수정
         {
             while (true)
             {
@@ -259,18 +281,22 @@ namespace message_3
         // 현재접속유저확인
         private void ShowCurrentClient()
         {
-            if (ClientManager.clientDic.Count == 0)
+            if (_clientManager.clientDic.Count == 0)
             {
                 Console.WriteLine("접속자가 없습니다.");
                 Console.ReadKey();
                 return;
             }
 
-            foreach (var item in ClientManager.clientDic)
+            foreach (var item in _clientManager.clientDic)
             {
                 Console.WriteLine(item.Value.clientName);
             }
             Console.ReadKey();
         } 
+        public void StopServer()
+        {
+            isRunning = false;
+        }
     }
 }

@@ -4,7 +4,7 @@ namespace message_3{
         static void Main(string[] args)
         {
             MainServer a = new MainServer();
-            a.ConSoleView();
+            a.ConsoleView();
         }
     }
 }
